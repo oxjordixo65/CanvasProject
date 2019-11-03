@@ -1,0 +1,63 @@
+body {
+    background-color: black;
+}
+
+.separacionBottom {
+    margin-bottom: 2.2em;
+}
+
+.footerCopyright {
+    color: white;
+}
+
+@media screen and (min-width: 1024px) {
+    /* reglas CSS */
+    #responsiveCarousel {
+        width: 70em;
+        margin: 0 auto;
+    }
+}
+
+#canvas {
+    border: solid white 1px;
+    background-color: white;
+    text-align: center;
+}
+
+#contenedorBotones {
+    padding-top: 8%;
+    width: 150%;
+    height: 100%;
+    border: 1px solid white;
+    text-align: center;
+    background-color: darkslategrey;
+}
+
+.iWhite {
+    color: white;
+}
+
+.centrado {
+    margin-left: 10%;
+}
+
+.videoMP4 {
+    margin-top: 5%;
+    margin-bottom: 5%;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+}
+
+.botones:hover {
+    color: white;
+    /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#000000+0,000000+100&0.65+0,0+100;Neutral+Density */
+    background: -moz-linear-gradient(top, rgba(0, 0, 0, 0.65) 0%, rgba(0, 0, 0, 0) 100%);
+    /* FF3.6-15 */
+    background: -webkit-linear-gradient(top, rgba(0, 0, 0, 0.65) 0%, rgba(0, 0, 0, 0) 100%);
+    /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.65) 0%, rgba(0, 0, 0, 0) 100%);
+    /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid: DXImageTransform.Microsoft.gradient( startColorstr='#a6000000', endColorstr='#00000000', GradientType=0);
+    /* IE6-9 */
+}

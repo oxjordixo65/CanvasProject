@@ -1,0 +1,199 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="css/estils.css">
+    <title>Bootstrap CDN</title>
+    <script src="js/canvas.js"></script>
+
+</head>
+
+<body>
+
+
+
+    <nav id="inicioPagina" class="navbar navbar-expand-lg navbar-light bg-light separacionBottom">
+        <a class="navbar-brand" href="#finalPagina">
+            <img src="img/j.png" style="width:82px; height:86px" title="White flower" alt="Flower">
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" href="primeraActBootstrap.html">Home <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Sobre Mi</a>
+                </li>
+
+
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Llenguatges
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item" href="#">C</a>
+                        <a class="dropdown-item" href="#">C++</a>
+                        <a class="dropdown-item" href="#">C#</a>
+                        <a class="dropdown-item" href="#">Java</a>
+                        <a class="dropdown-item" href="#">HTML5</a>
+                        <a class="dropdown-item" href="#">JavaScript</a>
+                        <a class="dropdown-item" href="#">Python</a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="#">Favorite</a>
+                    </div>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="editorCanvas.html">Editor Canvas</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+                </li>
+            </ul>
+
+
+            <a class="btn btn-primary" href="https://www.facebook.com/jordiyang1" target="_blank"><i
+                    class="fa fa-facebook"></i></i></a>
+
+            <a class="btn btn-danger" href="https://www.instagram.com/yyyyyyyya11/" target="_blank"><i
+                    class="fa fa-instagram"></i></a>
+
+            <a class="btn btn-outline-danger" href="mailto:jordiyang@hotmail.com" target="_blank"><i
+                    class="fa fa-envelope"></i></a>
+
+            <a class="btn btn-success" href="tel:611473512" target="_blank"><i class="fa fa-phone"></i></a>
+
+
+
+
+            <form class="form-inline my-2 my-lg-0">
+                <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+                <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+
+            </form>
+
+        </div>
+    </nav>
+
+
+
+
+    <div class="container separacionBottom">
+        <!--container-fluid para que ocupe todo el ancho-->
+        <div class="row">
+            <div class="col-sm-2 izquierda">
+                <!--table-->
+                <div id="contenedorBotones">
+
+                    <button class="btn btn-light botones" id="botonPincel"><i class="fa fa-paint-brush"></i></button>
+                    <button class="btn btn-light botones" id="botonGoma"><i class="fa fa-eraser "></i></button>
+                    <label class="iWhite centrado" for="Size">Line size</label>
+
+                    <input id="rangoPincel" type="range" min="1" max="100" value="1" />
+                    <input id="rangoInput" type="text" size="1" value="1" /><br><br>
+
+                    <button class="btn btn-light botones" id="botonCuadrado"><i class="fa fa-square"></i></button>
+                    <button class="btn btn-light botones" id="botonRectangulo"><i class="fa fa-square"></i><i
+                            class="fa fa-square"></i></button>
+                    <button class="btn btn-light botones" id="botonRotacion"><i class="fa fa-undo"></i></button><br><br>
+
+                    <button class="btn btn-light botones" id="botonTriangulo"><i
+                            class="fa fa-exclamation-triangle"></i></button>
+                    <button class="btn btn-light botones" id="botonCirculo"><i class="fa fa-circle"></i></button>
+                    <button class="btn btn-light botones" id="botonImagen"><i class="fa fa-image"></i></button><br><br>
+
+                    <label class="iWhite" for="Size">Figure size</label><br>
+                    <input id="rangoFigura" type="range" min="10" max="100" value="10" />
+                    <input id="rangoInputFigura" type="text" size="1" value="10" /><br><br>
+
+
+
+                    <button class="btn btn-light botones" id="botonTexto"><i class="fa fa-text-width">ext</i></button>
+                    <i class="fa fa-text-height iWhite"></i>
+                    <select id="selectTamLetra">
+                        <option value="value1">8</option>
+                        <option value="value2" selected>10</option>
+                        <option value="value3">12</option>
+                        <option value="value4">16</option>
+                        <option value="value5">20</option>
+                        <option value="value6">24</option>
+                        <option value="value7">32</option>
+                        <option value="value8">40</option>
+
+                    </select>
+                    <select id="selectFontStyle">
+                        <option value="value1" selected>normal</option>
+                        <option value="value2">italic</option>
+                        <option value="value3">oblique</option>
+                        <option value="value4">bold</option>
+                        <option value="value5">small-caps</option>
+                    </select>
+
+                    <input id="botonColor" type="color" placeholder="#000">
+                    <br><br>
+                    <input id="textoPersonalizado" type="text" name="firstname" value="Hola" /><br><br>
+
+                    <a href="#" id="descargarImagen">
+                        <button class="btn btn-light botones" id="botonGuardar"><i class="fa fa-save"></i></button>
+                    </a>
+                    <button class="btn btn-light botones" id="botonGris">Gris</button>
+
+                    <button class="btn btn-light botones" id="botonAlternarColor"> -</i></button>
+
+                    <button class="btn btn-light botones" id="botonClear"><i class="fa fa-shower"></i></button><br>
+
+
+
+                </div>
+
+
+            </div>
+
+            <div class="col-sm-10 text-center">
+                <canvas id="canvas" width="800" height="530"></canvas>
+
+
+            </div>
+
+
+        </div>
+    </div>
+
+
+    <!-- Footer -->
+    <footer id="finalPagina" class="page-footer font-small blue">
+
+        <!-- Copyright -->
+        <div class="footer-copyright text-center py-3 footerCopyright">© 2019 Copyright:
+            <a href="#inicioPagina"> Jordi Yang</a>
+        </div>
+        <!-- Copyright -->
+
+    </footer>
+    <!-- Footer -->
+
+
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+
+</body>
+
+</html>
