@@ -46,6 +46,7 @@ window.onload = function() {
         }
     }
 
+    //cada cop que movem el mouse es truca all callback obtenirCoordenades
     c.addEventListener("mousemove", obtenirCoordenades, true);
 
     c.addEventListener("mousedown", () => {
@@ -62,6 +63,8 @@ window.onload = function() {
         pintar();
     });
 
+
+    //Cuando levantamos el dedo del boton quitamos el listener de mousemove tanto del pincel como de la goma para que dejen de pintar/borrar
     c.addEventListener(
         "mouseup",
         () => {
@@ -74,12 +77,14 @@ window.onload = function() {
         true
     );
 
+    //obtenemos las coordenadas en el eje de las x e y
     function obtenirCoordenades(evt) {
         var rect = c.getBoundingClientRect();
         mouse.x = evt.clientX - rect.left;
         mouse.y = evt.clientY - rect.top;
     }
 
+    //funcion del pincel para pintar
     function pinselada() {
         ctx.lineWidth = tamLinea;
         ctx.lineJoin = "round";
@@ -88,6 +93,7 @@ window.onload = function() {
         ctx.stroke();
     }
 
+    //funcion de la goma para borrar
     function goma() {
         ctx.lineWidth = tamLinea;
         ctx.lineJoin = "round";
@@ -111,6 +117,7 @@ window.onload = function() {
         ctx.stroke();
     }
 
+    //circulo al pulsar el boton
     function pintarCirculo() {
         ctx.lineWidth = tamLinea;
         ctx.lineJoin = "round";
@@ -122,6 +129,7 @@ window.onload = function() {
         ctx.stroke();
     }
 
+    //pinta un rectangulo al pulsar
     function pintarRectangulo() {
         ctx.lineWidth = tamLinea;
         ctx.lineJoin = "round";
@@ -137,18 +145,26 @@ window.onload = function() {
         ctx.stroke();
     }
 
+    //pinta un triangulo al pulsar
     function pintarTriangulo() {
 
         ctx.beginPath();
         ctx.lineWidth = tamLinea;
-        ctx.moveTo(mouse.x, mouse.y);
+        ctx.moveTo(mouse.x, mouse.y); //cogemos la posicion en x e y en la recta
 
-        ctx.lineTo(mouse.x - (parseInt(tamFigura) / 2), mouse.y + parseInt(tamFigura));
-        ctx.lineTo(mouse.x + (parseInt(tamFigura) / 2), mouse.y + parseInt(tamFigura));
-        ctx.closePath();
+        //TENIENDO EN CUENTA QUE LA RECTA ARRIBA A LA IZQUIERDA VALE 0,0 !
+        ctx.lineTo(mouse.x - (parseInt(tamFigura) / 2), mouse.y + parseInt(tamFigura)); //desde la posicion x e y de antes, restamos en la posicion x 
+        //el tamaño de la figura y lo divimos entre dos ya que hay dos 
+        //partes esta parte unicamente dibuja del punto inicial una linea hacia la izquierda
+        //tambien usamos la posicion de y mas el tamaño de la figura para que haga la linea
+        //hacia abajo
+        ctx.lineTo(mouse.x + (parseInt(tamFigura) / 2), mouse.y + parseInt(tamFigura)); //hacemos lo correspondiente pero ahora sumandole el tamaño de la figura a x para
+        //que se mueva hacia la derecha la linea
+        ctx.closePath(); //con close path se cerraran las lineas y de esta forma se formara el triangulo 
         ctx.stroke();
     }
 
+    //funcion para pintar el texto que hayamos puesto en el input text
     function pintarTexto() {
         var tamLetra = document.getElementById("selectTamLetra");
         var tamLetraSeleccionada = tamLetra.options[tamLetra.selectedIndex].text;
@@ -161,18 +177,21 @@ window.onload = function() {
         ctx.stroke();
     }
 
+    //limpia el canvas entero
     function clearCanvas() {
         ctx.beginPath();
         ctx.clearRect(0, 0, c.width, c.height);
         ctx.closePath();
     }
 
+    //canvia el color de las formas o del texto
     function pintarColor() {
         var color = document.getElementById("botonColor");
         ctx.fillStyle = color.value;
         ctx.strokeStyle = color.value;
     }
 
+    //funcion para guardar la imagen
     function guardarComImatge() {
         document.getElementById("descargarImagen").download = "canvas.png";
         document.getElementById("descargarImagen").href = document
@@ -180,18 +199,21 @@ window.onload = function() {
             .toDataURL("image/png");
     }
 
+    //Esto hace que al cambiar el valor del input range del tamaño del pincel se nos muestre en un pequeño input text al lado
     function mostrarValorRango() {
         var valorPincel = document.getElementById("rangoPincel").value;
         document.getElementById("rangoInput").value = valorPincel;
         tamLinea = valorPincel;
     }
 
+    //Esto hace que al cambiar el valor del input range del tamaño de la figura se nos muestre en un pequeño input text al lado
     function mostrarValorRangoFigura() {
         var valorFigura = document.getElementById("rangoFigura").value;
         document.getElementById("rangoInputFigura").value = valorFigura;
         tamFigura = valorFigura;
     }
 
+    //funcion para volver la imagen a grises usando bitmap
     function grayScale() {
         var imgd = ctx.getImageData(0, 0, c.width, c.height);
         var data = imgd.data;
@@ -204,6 +226,7 @@ window.onload = function() {
         ctx.putImageData(imgd, 0, 0);
     }
 
+    //funcion para sacar el color negativo usando bitmap
     function negativo() {
         var imgd = ctx.getImageData(0, 0, c.width, c.height);
         var data = imgd.data;
@@ -217,6 +240,7 @@ window.onload = function() {
         ctx.putImageData(imgd, 0, 0);
     }
 
+    //funcion para cargar una imagen y ponerla en el canvas al hacer click
     function ponerImagen() {
         var background = new Image();
         background.src = "img/j.png";
@@ -225,15 +249,14 @@ window.onload = function() {
         };
     }
 
+    //funcion para rotar las figuras o el texto
     function rotarFigura() {
         ctx.rotate(0.17);
-
-
-        // draw your object
-        ctx.restore();
+        ctx.restore(); //dibuja la figura
 
     }
 
+    //RECUPERAMOS LOS ELEMENTOS DEL HTML5 Y LES AÑADIMOS SUS LISTENERS CORRESPONDIENTES
     var botonPincel = document.getElementById("botonPincel").addEventListener(
         "click",
         () => {
