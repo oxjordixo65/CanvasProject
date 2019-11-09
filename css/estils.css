@@ -41,6 +41,18 @@ body {
     margin-left: 10%;
 }
 
+.alineadoCentro {
+    text-align: center;
+}
+
+.alineadoCentro h1 {
+    color: rgb(216, 214, 214);
+}
+
+.alineadoCentro p {
+    color: rgb(135, 178, 184);
+}
+
 .videoMP4 {
     margin-top: 5%;
     margin-bottom: 5%;

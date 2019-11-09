@@ -30,7 +30,7 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav mr-auto">
                 <li class="nav-item active">
-                    <a class="nav-link" href="primeraActBootstrap.html">Home <span class="sr-only">(current)</span></a>
+                    <a class="nav-link" href="index.html">Home <span class="sr-only">(current)</span></a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="#">Sobre Mi</a>
@@ -57,9 +57,7 @@
                     <a class="nav-link" href="editorCanvas.html">Editor Canvas</a>
                 </li>
 
-                <li class="nav-item">
-                    <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
-                </li>
+
             </ul>
 
             <a class="btn btn-primary" href="https://www.facebook.com/jordiyang1" target="_blank"><i
@@ -83,12 +81,24 @@
     <div class="container separacionBottom">
         <!--container-fluid para que ocupe todo el ancho-->
         <div class="row">
-            <div class="col-sm-12">
+            <div class="col-sm-12 alineadoCentro">
                 <!--table-->
-                <section class="iWhite">
+                <section>
                     <h1>Introducció</h1>
                     <p>Aquesta pàgina correspont al index del treball de l'API Canvas amb javascript i html5.</p>
+                    <br><br>
                 </section>
+
+                <article>
+                    <h1>Aparença del canvas</h1>
+                    <img src="img/Captura.PNG" width="80%" height="50%">
+                    <p>Com podem veure he creat varies eines, com el pincell, tamany de la linea, goma, cuadrat, rectangle, triangle, cercle, imatge, insercio de text, tamany de text, font de la lletra, color de les formes i lletras, guardat, color gris
+                        amb bitmap, color negatiu amb bitmap, netejat del canvas.</p>
+                    <br>
+                    <br>
+                </article>
+
+
 
             </div>
         </div>
@@ -96,21 +106,54 @@
 
 
     <!--imagenes chetadas-->
-    <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+    <div id="carouselExampleIndicators" class="carousel slide alineadoCentro" data-ride="carousel">
+        <h1>Exemple del ús de totes les eines una a una: </h1>
+
         <ol class="carousel-indicators">
             <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
             <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
             <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
         </ol>
+
         <div class="carousel-inner" id="responsiveCarousel">
             <div class="carousel-item active">
-                <img src="img/img1.png" class="d-block w-100" alt="">
+                <img src="img/1.PNG" class="d-block w-100" alt="">
             </div>
             <div class="carousel-item">
-                <img src="img/img2.png" class="d-block w-100" alt="">
+                <img src="img/2.PNG" class="d-block w-100" alt="">
             </div>
             <div class="carousel-item">
-                <img src="img/img3.png" class="d-block w-100" alt="">
+                <img src="img/3.PNG" class="d-block w-100" alt="">
+            </div>
+            <div class="carousel-item">
+                <img src="img/4.PNG" class="d-block w-100" alt="">
+            </div>
+            <div class="carousel-item">
+                <img src="img/5.PNG" class="d-block w-100" alt="">
+            </div>
+            <div class="carousel-item">
+                <img src="img/6.PNG" class="d-block w-100" alt="">
+            </div>
+            <div class="carousel-item">
+                <img src="img/7.PNG" class="d-block w-100" alt="">
+            </div>
+            <div class="carousel-item">
+                <img src="img/8.PNG" class="d-block w-100" alt="">
+            </div>
+            <div class="carousel-item">
+                <img src="img/9.PNG" class="d-block w-100" alt="">
+            </div>
+            <div class="carousel-item">
+                <img src="img/10.PNG" class="d-block w-100" alt="">
+            </div>
+            <div class="carousel-item">
+                <img src="img/11.PNG" class="d-block w-100" alt="">
+            </div>
+            <div class="carousel-item">
+                <img src="img/12.PNG" class="d-block w-100" alt="">
+            </div>
+            <div class="carousel-item">
+                <img src="img/13.PNG" class="d-block w-100" alt="">
             </div>
 
         </div>
@@ -122,28 +165,31 @@
             <span class="carousel-control-next-icon" aria-hidden="true"></span>
             <span class="sr-only">Next</span>
         </a>
+        <br><br>
     </div>
 
-
-    <div id="video-container" class="embed-responsive-item videoMP4">
-        <!-- Video -->
-        <video id="video">
-          
-            <source src="video/ed.mp4" type="video/mp4">
-            <p>
-                Your browser doesn't support HTML5 video.
-                <a href="video/ed.mp4">Download</a> the video instead.
-            </p>
-        </video>
-        <!-- Video Controls -->
-        <div id="video-controls">
-            <button type="button" id="play-pause"><i class="fa fa-play-circle"></i></button>
-            <input type="range" id="seek-bar" value="0">
-            <button type="button" id="mute"><i class="fa fa-volume-up"></i></button>
-            <input type="range" id="volume-bar" min="0" max="1" step="0.1" value="1">
-            <button type="button" id="full-screen"><i class="fa fa-tv"></i></button>
+    <section class="alineadoCentro">
+        <h1>Vídeo en HTML5 amb controls personalitzats:</h1>
+        <div id="video-container" class="embed-responsive-item videoMP4">
+            <!-- Video -->
+            <video id="video">
+                    <source src="video/ed.mp4" type="video/mp4">
+                    <p>
+                        Your browser doesn't support HTML5 video.
+                        <a href="video/ed.mp4">Download</a> the video instead.
+                    </p>
+                </video>
+            <!-- Video Controls -->
+            <div id="video-controls">
+                <button type="button" id="play-pause"><i class="fa fa-play-circle"></i></button>
+                <input type="range" id="seek-bar" value="0">
+                <button type="button" id="mute"><i class="fa fa-volume-up"></i></button>
+                <input type="range" id="volume-bar" min="0" max="1" step="0.1" value="1">
+                <button type="button" id="full-screen"><i class="fa fa-tv"></i></button>
+            </div>
         </div>
-    </div>
+    </section>
+
 
 
 

@@ -2,6 +2,7 @@
     width: 42.2%;
     height: 40%;
     position: relative;
+    border: 1px dotted white;
 }
 
 #video-controls {
